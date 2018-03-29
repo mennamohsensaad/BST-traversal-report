@@ -10,6 +10,7 @@
 - [ ] Binary Trees as a special case of Trees.
 - [ ] Binary Search Tree (BST) as a special case of Binary Trees
 - [X] Add a an example figures for a Binary Tree
+- [X] Add a an example figures for a BST
 
 <!-- This is a comment line in Markdown and HTML -->
 <!-- Comment line are not rendered in the viewed document -->
