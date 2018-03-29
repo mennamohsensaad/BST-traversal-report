@@ -63,8 +63,8 @@ struct BSTNode
 #### Traversal
 
 - [ ] Description
-- [ ] Sample code (Maybe Psuedo)
-- [ ] Performance analysis (i.e big-`O` notation)
+- [ ] Why traversing a tree (applications)
+- [ ] Extra: After writing the next subsections add a comparison table between the 4 traversal routines.
 
 [*Write here*]
 
