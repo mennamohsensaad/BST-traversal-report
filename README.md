@@ -5,6 +5,8 @@
 - [ ] Introduce **graph** as a general data structure and **tree** as a special case of **graph** data structure.
 - [ ] Add some figures for **graphs** that are not trees and figures for **graphs** that are trees.
 
+[*Paragraph here*]
+
 ## Binary Search Trees
 
 - [ ] Binary Trees as a special case of Trees.
@@ -19,11 +21,15 @@
 |-------------|--------------------------|
 |![bt](images/sample_image.png) | [*Add figure here*] |
 
+[*At least two paragraphs here*]
+
 ### Motivation
 
 - [ ] Why using BST
 - [ ] BST vs. Arrays
 - [ ] BST vs. Linked Lists
+
+[*Motivation paragraph here*]
 
 ### Node Structure
 
@@ -36,7 +42,6 @@ struct BSTNode
 };
 ```
 
-
 ### Basic Operations on BST
 
 #### Insertion
@@ -45,11 +50,15 @@ struct BSTNode
 - [ ] Sample code (Maybe Psuedo)
 - [ ] Performance analysis (i.e big-`O` notation)
 
+[*Write here*]
+
 #### Removal
 
 - [ ] Description
 - [ ] Sample code (Maybe Psuedo)
 - [ ] Performance analysis (i.e big-`O` notation)
+
+[*Write here*]
 
 #### Traversal
 
@@ -57,29 +66,39 @@ struct BSTNode
 - [ ] Sample code (Maybe Psuedo)
 - [ ] Performance analysis (i.e big-`O` notation)
 
+[*Write here*]
+
 ##### In-order
 
 - [ ] Description
-- [ ] Sample code (Maybe Psuedo)
+- [ ] Implement the logic without using recursion (You may use Psuedo-code)
 - [ ] Performance analysis (i.e big-`O` notation)
+
+[*Write here*]
 
 ##### Pre-order
 
 - [ ] Description
-- [ ] Sample code (Maybe Psuedo)
+- [ ] Implement the logic without using recursion (You may use Psuedo-code)
 - [ ] Performance analysis (i.e big-`O` notation)
+
+[*Write here*]
 
 ##### Post-order
 
 - [ ] Description
-- [ ] Sample code (Maybe Psuedo)
+- [ ] Implement the logic without using recursion (You may use Psuedo-code)
 - [ ] Performance analysis (i.e big-`O` notation)
+
+[*Write here*]
 
 ##### Breadth-first
 
 - [ ] Description
-- [ ] Sample code (Maybe Psuedo)
+- [ ] Implement the logic without using recursion (You may use Psuedo-code)
 - [ ] Performance analysis (i.e big-`O` notation)
+
+[*Write here*]
 
 ### References
 
@@ -87,3 +106,8 @@ struct BSTNode
 - [ ] Add videos or blogs you think very simple and informative.
 
 1. [Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree), *Wikipedia*.
+2. Reference 2
+3. Reference 3
+4. and so on..
+
+[*Write here*]
