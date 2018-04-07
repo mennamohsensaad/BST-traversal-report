@@ -27,7 +27,7 @@ The various kinds of data structures referred to as trees in computer science ha
 <!-- Here is a sample images inside a table  -->
 | Binary Tree | Binary Search Tree (BST) |
 |-------------|--------------------------|
-| ![bt](images/sample_image.png) | ![t](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/tree1.png) |
+| ![bt](images/sample_image.png) | ![t](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/bst2.png) |
 
 - briefly **Binary trees** is a special case of trees where each node can have at most 2 children. Also, these children are named: left child or right child. A very useful specialization of binary trees is binary search tree (BST) where nodes are conventionally ordered in a certain manner. By convention, the left children<parent<right children, and this rule propagates recursively across the tree 
 
