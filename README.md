@@ -28,6 +28,7 @@ so briefly **Binary trees** is a special case of trees where each node can have 
 - briefly **Binary trees** is a special case of trees where each node can have at most 2 children. Also, these children are named: left child or right child. A very useful specialization of binary trees is binary search tree (BST) where nodes are conventionally ordered in a certain manner. By convention, the left children<parent<right children, and this rule propagates recursively across the tree 
 
 - binary search trees (BST), sometimes called ordered or sorted binary trees, are a particular type of container: data structures that store "items" (such as numbers, names etc.) in memory. They allow fast lookup, addition and removal of items, and can be used to implement either dynamic sets of items, or lookup tables that allow finding an item by its key (e.g., finding the phone number of a person by name).
+![b](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/bst.jpeg)
 
 ### Motivation
 
@@ -147,7 +148,17 @@ logarithmic time O(log(n))
 - [ ] Why traversing a tree (applications)
 - [ ] Extra: After writing the next subsections add a comparison table between the 4 traversal routines.
 
-[*Write here*]
+- tree traversal (also known as tree search) is a form of graph traversal and refers to the process of visiting (checking and/or updating) each node in a tree data structure, exactly once. Such traversals are classified by the order in which the nodes are visited. The following algorithms are described for a binary tree, but they may be generalized to other trees as well.
+there are 4 ways to do so in the BST( In-order,Pre-order, Post-order,Breadth-first)
+
+
+- ((Applications))
+
+Pre-order traversal while duplicating nodes and edges can make a complete duplicate of a binary tree. It can also be used to make a prefix expression (Polish notation) from expression trees: traverse the expression tree pre-orderly.
+
+In-order traversal is very commonly used on binary search trees because it returns values from the underlying set in order, according to the comparator that set up the binary search tree (hence the name).
+
+Post-order traversal while deleting or freeing nodes and values can delete or free an entire binary tree. It can also generate a postfix representation of a binary tree.
 
 ##### In-order
 
@@ -163,7 +174,22 @@ logarithmic time O(log(n))
 - [ ] Implement the logic without using recursion (You may use Psuedo-code)
 - [ ] Performance analysis (i.e big-`O` notation)
 
-[*Write here*]
+- It means visiting the numbers or the Nodes in the BST in an ascending order or from the smallest to the biggest number, by visiting
+The Left Node > The Parent Node > The Right Node.
+For us to make it in a Stack implementation we should start Pushing the numbers from the Right Sub Tree in the order of:
+The Right Node>The Parent Node>The Left Node.
+Then we Push the Root after Pushing the Right Sub Tree.
+At Last we Push the Left Sub Tree in the order of:
+The Right Node>The Parent Node >The Left Node.
+By doing the above mentioned steps, when we Pop the contents of the Stack it will come out in the In-order Traversal as the Stack follows the Last In First Out (LIFO) rule.
+So, the Left Sub Tree is Popped out first with the Left Node then the Parent Node then the Right Node.
+After that, the Root is Popped out and at last the Right Sub Tree is Popped out in the same manner as the Left Sub Tree.
+
+
+
+
+
+
 
 ##### Post-order
 
@@ -188,5 +214,5 @@ logarithmic time O(log(n))
 
 1. [Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree), *Wikipedia*.
 2. [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
-3. [*Reference 3*]
+3. [Tree traversal] (https://en.wikipedia.org/wiki/Tree_traversal)
 4. [*and so on..*]
