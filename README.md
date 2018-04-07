@@ -9,8 +9,10 @@
 
 The various kinds of data structures referred to as trees in computer science have underlying graphs that are trees in graph theory, although such data structures are generally rooted trees. A rooted tree may be directed, called a directed rooted tree, either making all its edges point away from the root—in which case it is called an arborescence, branching,[4] or out-tree[4]—or making all its edges point towards the root—in which case it is called an anti-arborescence or in-tree.A rooted tree itself has been defined by some authors as a directed graph
 
+![tg](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/Tree_graph.png)
 
 
+![graph](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/graphtreesvg)
 
 .
 ## Binary Search Trees
@@ -30,6 +32,7 @@ The various kinds of data structures referred to as trees in computer science ha
 - briefly **Binary trees** is a special case of trees where each node can have at most 2 children. Also, these children are named: left child or right child. A very useful specialization of binary trees is binary search tree (BST) where nodes are conventionally ordered in a certain manner. By convention, the left children<parent<right children, and this rule propagates recursively across the tree 
 
 - binary search trees (BST), sometimes called ordered or sorted binary trees, are a particular type of container: data structures that store "items" (such as numbers, names etc.) in memory. They allow fast lookup, addition and removal of items, and can be used to implement either dynamic sets of items, or lookup tables that allow finding an item by its key (e.g., finding the phone number of a person by name).
+
 ![b](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/bst.jpeg)
 
 ### Motivation
@@ -93,7 +96,9 @@ void insert( BSTNode *&tree, int data )
     }
 }
 
-logarithmic time O(log(n))
+logarithmic time 
+average **O(log(n))**
+Worst case **O(n)**
 
 #### Removal
 
@@ -141,7 +146,10 @@ void remove( BSTNode *&tree, int data )
     else remove( tree->right, data );
 }
 
-logarithmic time O(log(n))
+logarithmic time 
+average **O(log(n))**
+Worst case **O(n)**
+
 
 
 
@@ -215,6 +223,7 @@ After that, the Root is Popped out and at last the Right Sub Tree is Popped out 
 
 - void inorder( BSTNode *tree )
 {
+
     if( tree )
     {
         inorder( tree->left );
@@ -248,12 +257,20 @@ After that, the Right Sub Tree is Popped out with the Left Node then the Right N
 ![post](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/post_order.jpg)
 
 - void postorder( BSTNode *tree )
+
+
 {
+
     if( tree )
+    
     {
+
+
         postorder( tree->left );
         postorder( tree->right );
         std::cout << "[" << tree->data << "]";
+
+   
     }
 }
 
@@ -278,4 +295,6 @@ _ it mean  that Trees can also be traversed in level-order, where we visit every
 1. [Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree), *Wikipedia*.
 2. [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
 3. [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)
-4. [*and so on..*]
+4. [Tree (graph theory)](https://en.wikipedia.org/wiki/Tree_(graph_theory))
+5. [binary search tree insertion ](https://youtu.be/wcIRPqTR3Kc),*video*
+
