@@ -5,7 +5,11 @@
 - [ ] Introduce **graphs** briefly and **tree** as a special case of a **graph** data structure.
 - [ ] Add some figures for **graphs** and figures for **trees**.
 
-[*Paragraph here*]
+[*Binary Search Tree (BST) Traversal Stack Implementation
+The above illustration is called a Binary Search Tree (BST), it begins with the 1st number called Root, and then it branches to the Right and Left Sub Trees, and every node that is branched is called a Parent Node.
+Every node without branches is called a Leaf.
+The Left Node should always be smaller than the Parent Node, and the Right Node should always be greater than the Parent Node.
+so briefly **Binary trees** is a special case of trees where each node can have at most 2 children. Also, these children are named: left child or right child. A very useful specialization of binary trees is binary search tree (BST) where nodes are conventionally ordered in a certain manner. By convention, the left children<parent<right children, and this rule propagates recursively across the tree *]
 
 ## Binary Search Trees
 
@@ -19,26 +23,34 @@
 <!-- Here is a sample images inside a table  -->
 | Binary Tree | Binary Search Tree (BST) |
 |-------------|--------------------------|
-| ![bt](images/sample_image.png) | [*Add figure here*] |
+| ![bt](images/sample_image.png) | ![t](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/tree1.png) |
 
 [*At least two paragraphs here*]
 
 ### Motivation
 
-- [ ] Why using BST
-- [ ] BST vs. Arrays
+ - [ ] Why using BST
+- [ ]BST vs. Arrays
 - [ ] BST vs. Linked Lists
 
-[*Motivation paragraph here*]
+- Efficient search & insertion/deletion in logarithmic time O(log(n))
+
+   - Arrays:
+        (+) efficient search on sorted arrays O(log(n)),
+        (-) ineffiecient insertion/deletion O(n).
+    -Linked lists:
+        (-) inefficient search O(n),
+        (+) efficient insertion/deletion O(1).
+
+
 
 ### Node Structure
 
-- [ ] Propose a c++ `struct` of a BST node.
-
-```c++
 struct BSTNode
 {
-// Add memebers here
+int data;
+    BSTNode *left;
+    BSTNode *right;
 };
 ```
 
@@ -50,7 +62,12 @@ struct BSTNode
 - [ ] Sample code (Maybe Psuedo)
 - [ ] Performance analysis (i.e big-`O` notation)
 
-[*Write here*]
+ Nodes can be inserted into binary trees in between two other nodes or added after a leaf node. In binary trees, a node that is inserted is specified as to which child it is.
+ (Leaf nodes) 
+To add a new node after leaf node A, A assigns the new node as one of its children and the new node assigns node A as its parent.
+ (Internal nodes)
+The process of inserting a node into a binary tree
+Insertion on internal nodes is slightly more complex than on leaf nodes. Say that the internal node is node A and that node B is the child of A. (If the insertion is to insert a right child, then B is the right child of A, and similarly with a left child insertion.) A assigns its child to the new node and the new node assigns its parent to A. Then the new node assigns its child to B and B assigns its parent as the new node.
 
 #### Removal
 
