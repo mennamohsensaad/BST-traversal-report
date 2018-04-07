@@ -261,7 +261,10 @@ After that, the Right Sub Tree is Popped out with the Left Node then the Right N
 - [ ] Implement the logic without using recursion (You may use Psuedo-code)
 - [ ] Performance analysis (i.e big-`O` notation)
 
-[*Write here*]
+_ it mean  that Trees can also be traversed in level-order, where we visit every node on a level before going to a lower level. This search is referred to as breadth-first search (BFS), as the search tree is broadened as much as possible on each depth before going to the next depth.
+
+![Bf]()
+
 
 ### References
 
