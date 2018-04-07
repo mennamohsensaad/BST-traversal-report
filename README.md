@@ -2,9 +2,6 @@
 
 ## Trees
 
-- [ ] Introduce **graphs** briefly and **tree** as a special case of a **graph** data structure.
-- [ ] Add some figures for **graphs** and figures for **trees**.
-
 - In graph theory, a tree is an undirected graph in which any two vertices are connected by exactly one path. In other words, any acyclic connected graph is a tree. A forest is a disjoint union of trees.
 
 - The various kinds of data structures referred to as trees in computer science have underlying graphs that are trees in graph theory, although such data structures are generally rooted trees. A rooted tree may be directed, called a directed rooted tree, either making all its edges point away from the root—in which case it is called an arborescence, branching,[4] or out-tree[4]—or making all its edges point towards the root—in which case it is called an anti-arborescence or in-tree.A rooted tree itself has been defined by some authors as a directed graph
@@ -14,11 +11,6 @@
 
 
 ## Binary Search Trees
-
-- [ ] Binary Trees as a special case of Trees.
-- [ ] Binary Search Tree (BST) as a special case of Binary Trees
-- [X] Add a an example figures for a Binary Tree
-- [ ] Add a an example figures for a BST
 
 <!-- This is a comment line in Markdown and HTML -->
 <!-- Comment line are not rendered in the viewed document -->
@@ -35,10 +27,6 @@
 
 ### Motivation
 
- - [ ] Why using BST
- - [ ] BST vs. Arrays
- - [ ] BST vs. Linked Lists
-
 - Efficient search & insertion/deletion in logarithmic time O(log(n))
 
    - Arrays:
@@ -52,23 +40,20 @@
 
 
 ### Node Structure
-
+'''c++
 struct BSTNode
 {
     int data;
     BSTNode *left;
     BSTNode *right;
 };
-
+'''
 
 ### Basic Operations on BST
 
 
 #### Insertion
 
-- [ ] Description
-- [ ] Sample code (Maybe Psuedo)
-- [ ] Performance analysis (i.e big-`O` notation)
 
  - Nodes can be inserted into binary trees in between two other nodes or added after a leaf node. In binary trees, a node that is inserted is specified as to which child it is.
  (Leaf nodes) 
@@ -79,11 +64,8 @@ Insertion on internal nodes is slightly more complex than on leaf nodes. Say tha
 
  ![i](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/Insertion.png)
 
-
+'''c++
 void insert( BSTNode *&tree, int data )
-
-
-
 {
     if ( isEmpty( tree ))
         tree = new BSTNode{ data , nullptr , nullptr };
@@ -96,16 +78,12 @@ void insert( BSTNode *&tree, int data )
         else insert( tree->right, data );
     }
 }
-
+'''
 logarithmic time 
 average **O(log(n))**
 Worst case **O(n)**
 
 #### Removal
-
-- [ ] Description
-- [ ] Sample code (Maybe Psuedo)
-- [ ] Performance analysis (i.e big-`O` notation)
 
 - Deletion is the process whereby a node is removed from the tree. Only certain nodes in a binary tree can be removed unambiguously
 Node with zero or one children
@@ -116,10 +94,8 @@ Node with two children
 In a binary tree, a node with two children cannot be deleted unambiguously. However, in certain binary trees (including binary search trees) these nodes can be deleted, though with a rearrangement of the tree structure.
 ![d](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/delation.png)
 
-
+'''c++
 void remove( BSTNode *&tree, int data )
-
-
 {
 
     if ( isEmpty( tree )) 
@@ -150,7 +126,7 @@ void remove( BSTNode *&tree, int data )
         remove( tree->left, data );
     else remove( tree->right, data );
 }
-
+'''
 logarithmic time 
 average **O(log(n))**
 Worst case **O(n)**
@@ -161,9 +137,6 @@ Worst case **O(n)**
 
 #### Traversal
 
-- [ ] Description
-- [ ] Why traversing a tree (applications)
-- [ ] Extra: After writing the next subsections add a comparison table between the 4 traversal routines.
 
 - tree traversal (also known as tree search) is a form of graph traversal and refers to the process of visiting (checking and/or updating) each node in a tree data structure, exactly once. Such traversals are classified by the order in which the nodes are visited. The following algorithms are described for a binary tree, but they may be generalized to other trees as well.
 there are 4 ways to do so in the BST( pre-order,In-order, Post-order,Breadth-first)
@@ -179,9 +152,6 @@ Post-order traversal while deleting or freeing nodes and values can delete or fr
 
 ##### pre-order
 
-- [ ] Description
-- [ ] Implement the logic without using recursion (You may use Psuedo-code)
-- [ ] Performance analysis (i.e big-`O` notation)
 
 - it means visiting the numbers or the nodes in the BST by visiting
 The Parent Node > The Left Node >The Right Node.
@@ -195,9 +165,8 @@ So, the Root is Popped out first.
 After that, the Left Sub Tree is Popped out with the Parent Node then the Left Node then the Right Node and at last the Right Sub Tree is Popped out in the same manner as the Left Sub Tree.
 
  ![pre](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/pre_order.jpg)
-
+'''c++
  - void preorder( BSTNode *tree )
-
 {
     if( tree )
     {
@@ -206,13 +175,9 @@ After that, the Left Sub Tree is Popped out with the Parent Node then the Left N
         preorder( tree->right );
     }
 }
-
+'''
 
 ##### In-order
-
-- [ ] Description
-- [ ] Implement the logic without using recursion (You may use Psuedo-code)
-- [ ] Performance analysis (i.e big-`O` notation)
 
 - It means visiting the numbers or the Nodes in the BST in an ascending order or from the smallest to the biggest number, by visiting
 The Left Node > The Parent Node > The Right Node.
@@ -226,7 +191,7 @@ So, the Left Sub Tree is Popped out first with the Left Node then the Parent Nod
 After that, the Root is Popped out and at last the Right Sub Tree is Popped out in the same manner as the Left Sub Tree.
 
 ![in](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/inorder.jpg)
-
+'''c++
 - void inorder( BSTNode *tree )
 
 {
@@ -238,17 +203,11 @@ After that, the Root is Popped out and at last the Right Sub Tree is Popped out 
         inorder( tree->right );
     }
 }
-
+'''
 
 
 
 ##### Post-order
-
-- [ ] Description
-- [ ] Implement the logic without using recursion (You may use Psuedo-code)
-- [ ] Performance analysis (i.e big-`O` notation)
-
-
 - it means visiting the numbers or the nodes in the BST by visiting
 The Left Node >The Right Node > The Parent Node.
 For us to make it in a Stack implementation we should start Pushing the Root First.
@@ -263,9 +222,8 @@ After that, the Right Sub Tree is Popped out with the Left Node then the Right N
 
 ![post](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/post_order.jpg)
 
+'''c++
 - void postorder( BSTNode *tree )
-
-
 {
 
     if( tree )
@@ -277,17 +235,12 @@ After that, the Right Sub Tree is Popped out with the Left Node then the Right N
         postorder( tree->right );
         std::cout << "[" << tree->data << "]";
 
-   
     }
 }
+'''
 
 
-
-##### Breadth-first
-
-- [ ] Description
-- [ ] Implement the logic without using recursion (You may use Psuedo-code)
-- [ ] Performance analysis (i.e big-`O` notation)
+##### Breadth-first 
 
 _ it mean  that Trees can also be traversed in level-order, where we visit every node on a level before going to a lower level. This search is referred to as breadth-first search (BFS), as the search tree is broadened as much as possible on each depth before going to the next depth.
 
@@ -295,9 +248,6 @@ _ it mean  that Trees can also be traversed in level-order, where we visit every
 
 
 ### References
-
-- [ ] List the references.
-- [ ] Add videos or blogs you think very simple and informative.
 
 1. [Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree), *Wikipedia*.
 2. [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
