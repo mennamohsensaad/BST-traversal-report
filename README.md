@@ -149,10 +149,10 @@ logarithmic time O(log(n))
 - [ ] Extra: After writing the next subsections add a comparison table between the 4 traversal routines.
 
 - tree traversal (also known as tree search) is a form of graph traversal and refers to the process of visiting (checking and/or updating) each node in a tree data structure, exactly once. Such traversals are classified by the order in which the nodes are visited. The following algorithms are described for a binary tree, but they may be generalized to other trees as well.
-there are 4 ways to do so in the BST( In-order,Pre-order, Post-order,Breadth-first)
+there are 4 ways to do so in the BST( pre-order,In-order, Post-order,Breadth-first)
 
 
-- ((Applications))
+- #((Applications))
 
 Pre-order traversal while duplicating nodes and edges can make a complete duplicate of a binary tree. It can also be used to make a prefix expression (Polish notation) from expression trees: traverse the expression tree pre-orderly.
 
@@ -160,15 +160,37 @@ In-order traversal is very commonly used on binary search trees because it retur
 
 Post-order traversal while deleting or freeing nodes and values can delete or free an entire binary tree. It can also generate a postfix representation of a binary tree.
 
-##### In-order
+##### pre-order
 
 - [ ] Description
 - [ ] Implement the logic without using recursion (You may use Psuedo-code)
 - [ ] Performance analysis (i.e big-`O` notation)
 
-[*Write here*]
+- it means visiting the numbers or the nodes in the BST by visiting
+The Parent Node > The Left Node >The Right Node.
+For us to make it in a Stack implementation we should start Pushing the numbers from the Right Sub Tree in the order of:
+The Right Node>The Left Node>The Parent Node.
+Then we Push the Left Sub Tree after Pushing the Right Sub Tree in the order of:
+The Right Node > The Left Node >The Parent Node.
+At last we Push the Root.
+By doing the above mentioned steps, when we Pop the contents of the Stack it will come out in the Pre-order Traversal as the Stack follows the Last In First Out (LIFO) rule.
+So, the Root is Popped out first.
+After that, the Left Sub Tree is Popped out with the Parent Node then the Left Node then the Right Node and at last the Right Sub Tree is Popped out in the same manner as the Left Sub Tree.
 
-##### Pre-order
+ ![pre]()
+
+ - void preorder( BSTNode *tree )
+{
+    if( tree )
+    {
+        std::cout << "[" << tree->data << "]";
+        preorder( tree->left );
+        preorder( tree->right );
+    }
+}
+
+
+##### In-order
 
 - [ ] Description
 - [ ] Implement the logic without using recursion (You may use Psuedo-code)
@@ -185,8 +207,17 @@ By doing the above mentioned steps, when we Pop the contents of the Stack it wil
 So, the Left Sub Tree is Popped out first with the Left Node then the Parent Node then the Right Node.
 After that, the Root is Popped out and at last the Right Sub Tree is Popped out in the same manner as the Left Sub Tree.
 
+![in](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/inorder.jpg)
 
-
+- void inorder( BSTNode *tree )
+{
+    if( tree )
+    {
+        inorder( tree->left );
+        std::cout << "[" << tree->data << "]";
+        inorder( tree->right );
+    }
+}
 
 
 
