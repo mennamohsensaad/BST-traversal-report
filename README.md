@@ -7,14 +7,12 @@
 
 - In graph theory, a tree is an undirected graph in which any two vertices are connected by exactly one path. In other words, any acyclic connected graph is a tree. A forest is a disjoint union of trees.
 
-The various kinds of data structures referred to as trees in computer science have underlying graphs that are trees in graph theory, although such data structures are generally rooted trees. A rooted tree may be directed, called a directed rooted tree, either making all its edges point away from the root—in which case it is called an arborescence, branching,[4] or out-tree[4]—or making all its edges point towards the root—in which case it is called an anti-arborescence or in-tree.A rooted tree itself has been defined by some authors as a directed graph
+- The various kinds of data structures referred to as trees in computer science have underlying graphs that are trees in graph theory, although such data structures are generally rooted trees. A rooted tree may be directed, called a directed rooted tree, either making all its edges point away from the root—in which case it is called an arborescence, branching,[4] or out-tree[4]—or making all its edges point towards the root—in which case it is called an anti-arborescence or in-tree.A rooted tree itself has been defined by some authors as a directed graph
 
 ![tg](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/Tree_graph.png)
 
 
-![graph](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/graphtreesvg)
 
-.
 ## Binary Search Trees
 
 - [ ] Binary Trees as a special case of Trees.
@@ -72,7 +70,7 @@ struct BSTNode
 - [ ] Sample code (Maybe Psuedo)
 - [ ] Performance analysis (i.e big-`O` notation)
 
- Nodes can be inserted into binary trees in between two other nodes or added after a leaf node. In binary trees, a node that is inserted is specified as to which child it is.
+ - Nodes can be inserted into binary trees in between two other nodes or added after a leaf node. In binary trees, a node that is inserted is specified as to which child it is.
  (Leaf nodes) 
 To add a new node after leaf node A, A assigns the new node as one of its children and the new node assigns node A as its parent.
  (Internal nodes)
@@ -83,6 +81,9 @@ Insertion on internal nodes is slightly more complex than on leaf nodes. Say tha
 
 
 void insert( BSTNode *&tree, int data )
+
+
+
 {
     if ( isEmpty( tree ))
         tree = new BSTNode{ data , nullptr , nullptr };
@@ -106,7 +107,7 @@ Worst case **O(n)**
 - [ ] Sample code (Maybe Psuedo)
 - [ ] Performance analysis (i.e big-`O` notation)
 
-Deletion is the process whereby a node is removed from the tree. Only certain nodes in a binary tree can be removed unambiguously
+- Deletion is the process whereby a node is removed from the tree. Only certain nodes in a binary tree can be removed unambiguously
 Node with zero or one children
 The process of deleting an internal node in a binary tree
 
@@ -117,8 +118,12 @@ In a binary tree, a node with two children cannot be deleted unambiguously. Howe
 
 
 void remove( BSTNode *&tree, int data )
+
+
 {
-    if ( isEmpty( tree )) return;
+
+    if ( isEmpty( tree )) 
+    return;
 
     if ( data == tree->data )
     {
@@ -164,7 +169,7 @@ Worst case **O(n)**
 there are 4 ways to do so in the BST( pre-order,In-order, Post-order,Breadth-first)
 
 
-- #((Applications))
+ ##### ((Applications))
 
 Pre-order traversal while duplicating nodes and edges can make a complete duplicate of a binary tree. It can also be used to make a prefix expression (Polish notation) from expression trees: traverse the expression tree pre-orderly.
 
@@ -192,6 +197,7 @@ After that, the Left Sub Tree is Popped out with the Parent Node then the Left N
  ![pre](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/pre_order.jpg)
 
  - void preorder( BSTNode *tree )
+
 {
     if( tree )
     {
@@ -222,6 +228,7 @@ After that, the Root is Popped out and at last the Right Sub Tree is Popped out 
 ![in](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/inorder.jpg)
 
 - void inorder( BSTNode *tree )
+
 {
 
     if( tree )
