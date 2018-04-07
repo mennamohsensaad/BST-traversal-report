@@ -5,12 +5,14 @@
 - [ ] Introduce **graphs** briefly and **tree** as a special case of a **graph** data structure.
 - [ ] Add some figures for **graphs** and figures for **trees**.
 
-[*Binary Search Tree (BST) Traversal Stack Implementation
-The above illustration is called a Binary Search Tree (BST), it begins with the 1st number called Root, and then it branches to the Right and Left Sub Trees, and every node that is branched is called a Parent Node.
-Every node without branches is called a Leaf.
-The Left Node should always be smaller than the Parent Node, and the Right Node should always be greater than the Parent Node.
-so briefly **Binary trees** is a special case of trees where each node can have at most 2 children. Also, these children are named: left child or right child. A very useful specialization of binary trees is binary search tree (BST) where nodes are conventionally ordered in a certain manner. By convention, the left children<parent<right children, and this rule propagates recursively across the tree *]
+- In graph theory, a tree is an undirected graph in which any two vertices are connected by exactly one path. In other words, any acyclic connected graph is a tree. A forest is a disjoint union of trees.
 
+The various kinds of data structures referred to as trees in computer science have underlying graphs that are trees in graph theory, although such data structures are generally rooted trees. A rooted tree may be directed, called a directed rooted tree, either making all its edges point away from the root—in which case it is called an arborescence, branching,[4] or out-tree[4]—or making all its edges point towards the root—in which case it is called an anti-arborescence or in-tree.A rooted tree itself has been defined by some authors as a directed graph
+
+
+
+
+.
 ## Binary Search Trees
 
 - [ ] Binary Trees as a special case of Trees.
@@ -33,15 +35,16 @@ so briefly **Binary trees** is a special case of trees where each node can have 
 ### Motivation
 
  - [ ] Why using BST
-- [ ]BST vs. Arrays
-- [ ] BST vs. Linked Lists
+ - [ ] BST vs. Arrays
+ - [ ] BST vs. Linked Lists
 
 - Efficient search & insertion/deletion in logarithmic time O(log(n))
 
    - Arrays:
         (+) efficient search on sorted arrays O(log(n)),
         (-) ineffiecient insertion/deletion O(n).
-    -Linked lists:
+
+    - Linked lists:
         (-) inefficient search O(n),
         (+) efficient insertion/deletion O(1).
 
@@ -51,13 +54,14 @@ so briefly **Binary trees** is a special case of trees where each node can have 
 
 struct BSTNode
 {
-int data;
+    int data;
     BSTNode *left;
     BSTNode *right;
 };
-```
+
 
 ### Basic Operations on BST
+
 
 #### Insertion
 
@@ -177,7 +181,7 @@ By doing the above mentioned steps, when we Pop the contents of the Stack it wil
 So, the Root is Popped out first.
 After that, the Left Sub Tree is Popped out with the Parent Node then the Left Node then the Right Node and at last the Right Sub Tree is Popped out in the same manner as the Left Sub Tree.
 
- ![pre]()
+ ![pre](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/pre_order.jpg)
 
  - void preorder( BSTNode *tree )
 {
@@ -241,7 +245,7 @@ So, the Left Sub Tree is Popped out first with the Left Node then the Right Node
 After that, the Right Sub Tree is Popped out with the Left Node then the Right Node then the Parent Node and at last the Root is Popped out.
 
 
-![post] ()
+![post](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/post_order.jpg)
 
 - void postorder( BSTNode *tree )
 {
@@ -263,7 +267,7 @@ After that, the Right Sub Tree is Popped out with the Left Node then the Right N
 
 _ it mean  that Trees can also be traversed in level-order, where we visit every node on a level before going to a lower level. This search is referred to as breadth-first search (BFS), as the search tree is broadened as much as possible on each depth before going to the next depth.
 
-![Bf]()
+![Bf](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/Breadth-first.png)
 
 
 ### References
@@ -273,5 +277,5 @@ _ it mean  that Trees can also be traversed in level-order, where we visit every
 
 1. [Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree), *Wikipedia*.
 2. [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
-3. [Tree traversal] (https://en.wikipedia.org/wiki/Tree_traversal)
+3. [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)
 4. [*and so on..*]
