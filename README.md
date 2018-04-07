@@ -25,7 +25,9 @@ so briefly **Binary trees** is a special case of trees where each node can have 
 |-------------|--------------------------|
 | ![bt](images/sample_image.png) | ![t](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/tree1.png) |
 
-[*At least two paragraphs here*]
+- briefly **Binary trees** is a special case of trees where each node can have at most 2 children. Also, these children are named: left child or right child. A very useful specialization of binary trees is binary search tree (BST) where nodes are conventionally ordered in a certain manner. By convention, the left children<parent<right children, and this rule propagates recursively across the tree 
+
+- binary search trees (BST), sometimes called ordered or sorted binary trees, are a particular type of container: data structures that store "items" (such as numbers, names etc.) in memory. They allow fast lookup, addition and removal of items, and can be used to implement either dynamic sets of items, or lookup tables that allow finding an item by its key (e.g., finding the phone number of a person by name).
 
 ### Motivation
 
@@ -101,10 +103,40 @@ The process of deleting an internal node in a binary tree
 Suppose that the node to delete is node A. If A has no children, deletion is accomplished by setting the child of A's parent to null. If A has one child, set the parent of A's child to A's parent and set the child of A's parent to A's child.
 Node with two children
 In a binary tree, a node with two children cannot be deleted unambiguously. However, in certain binary trees (including binary search trees) these nodes can be deleted, though with a rearrangement of the tree structure.
+![d](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/delation.png)
 
 
+void remove( BSTNode *&tree, int data )
+{
+    if ( isEmpty( tree )) return;
 
+    if ( data == tree->data )
+    {
+        if ( !isEmpty( tree->left ) && !isEmpty( tree->right ))
+        {
+            BSTNode *minRight = minNode( tree->right );
+            tree->data = minRight->data;
+            remove( tree->right, minRight->data );
+        } else
+        {
+            BSTNode *discard = tree;
 
+            if ( isLeaf( tree ))
+                tree = nullptr;
+            else if ( !isEmpty( tree->left ))
+                tree = tree->left;
+            else
+                tree = tree->right;
+
+            delete discard;
+        }
+
+    } else if ( data < tree->data )
+        remove( tree->left, data );
+    else remove( tree->right, data );
+}
+
+logarithmic time O(log(n))
 
 
 
@@ -155,6 +187,6 @@ In a binary tree, a node with two children cannot be deleted unambiguously. Howe
 - [ ] Add videos or blogs you think very simple and informative.
 
 1. [Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree), *Wikipedia*.
-2. [*Reference 2*]
+2. [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
 3. [*Reference 3*]
 4. [*and so on..*]
