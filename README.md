@@ -228,7 +228,32 @@ After that, the Root is Popped out and at last the Right Sub Tree is Popped out 
 - [ ] Implement the logic without using recursion (You may use Psuedo-code)
 - [ ] Performance analysis (i.e big-`O` notation)
 
-[*Write here*]
+
+- it means visiting the numbers or the nodes in the BST by visiting
+The Left Node >The Right Node > The Parent Node.
+For us to make it in a Stack implementation we should start Pushing the Root First.
+Then we Push the Right Sub in the order of:
+The Parent Node > The Right Node >The Left Node.
+At last we Push the Left Sub Tree in the order of:
+The Parent Node > The Right Node >The Left Node.
+By doing the above mentioned steps, when we Pop the contents of the Stack it will come out in the Post-order Traversal as the Stack follows the Last In First Out (LIFO) rule.
+So, the Left Sub Tree is Popped out first with the Left Node then the Right Node then the Parent Node.
+After that, the Right Sub Tree is Popped out with the Left Node then the Right Node then the Parent Node and at last the Root is Popped out.
+
+
+![post] ()
+
+- void postorder( BSTNode *tree )
+{
+    if( tree )
+    {
+        postorder( tree->left );
+        postorder( tree->right );
+        std::cout << "[" << tree->data << "]";
+    }
+}
+
+
 
 ##### Breadth-first
 
