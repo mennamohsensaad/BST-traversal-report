@@ -69,13 +69,45 @@ To add a new node after leaf node A, A assigns the new node as one of its childr
 The process of inserting a node into a binary tree
 Insertion on internal nodes is slightly more complex than on leaf nodes. Say that the internal node is node A and that node B is the child of A. (If the insertion is to insert a right child, then B is the right child of A, and similarly with a left child insertion.) A assigns its child to the new node and the new node assigns its parent to A. Then the new node assigns its child to B and B assigns its parent as the new node.
 
+ ![i](https://github.com/sbme-tutorials/sbe201-bst-traversal-report-mennamohsensaad/blob/master/images/Insertion.png)
+
+
+void insert( BSTNode *&tree, int data )
+{
+    if ( isEmpty( tree ))
+        tree = new BSTNode{ data , nullptr , nullptr };
+
+    else
+    {
+        if ( data < tree->data )
+            insert( tree->left, data );
+
+        else insert( tree->right, data );
+    }
+}
+
+logarithmic time O(log(n))
+
 #### Removal
 
 - [ ] Description
 - [ ] Sample code (Maybe Psuedo)
 - [ ] Performance analysis (i.e big-`O` notation)
 
-[*Write here*]
+Deletion is the process whereby a node is removed from the tree. Only certain nodes in a binary tree can be removed unambiguously
+Node with zero or one children
+The process of deleting an internal node in a binary tree
+
+Suppose that the node to delete is node A. If A has no children, deletion is accomplished by setting the child of A's parent to null. If A has one child, set the parent of A's child to A's parent and set the child of A's parent to A's child.
+Node with two children
+In a binary tree, a node with two children cannot be deleted unambiguously. However, in certain binary trees (including binary search trees) these nodes can be deleted, though with a rearrangement of the tree structure.
+
+
+
+
+
+
+
 
 #### Traversal
 
